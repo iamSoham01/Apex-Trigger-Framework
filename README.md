@@ -15,29 +15,6 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 
 ---
 
-## 🏗️ Structure
-
-force-app/
-└── main/
-└── default/
-├── triggers/
-├── classes/
-│ ├── TriggerContext.cls
-│ ├── TriggerDispatcher.cls
-│ ├── TriggerRecursionGuard.cls
-│ ├── SimpleUnitOfWork.cls
-│ ├── ITriggerHandler.cls
-│ ├── [YourObject]TriggerHandler.cls
-│ └── [YourObject]Service.cls
-├── customMetadata/
-│ └── Trigger_Handler_Config__mdt
-└── events/ (optional)
-└── Account_Change_Event__e
-
-
-
----
-
 ## 🚀 Getting Started
 
 1. **Deploy Metadata**  
@@ -92,3 +69,6 @@ force-app/
 | Trigger logic hard to test      | Modular, testable handler classes |
 | Deployment for every change     | CMDT-based handler registration   |
 | Asynchronous decoupling needed  | Platform Event integration        |
+
+
+![Trigger Framework Coparison](framework-comparison.png)
