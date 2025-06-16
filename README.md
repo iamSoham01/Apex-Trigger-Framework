@@ -45,7 +45,7 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 
 ---
 
-## 💡 Use Cases
+## 💡 Advantages
 
 - Centralized Logic Management
 - Recursion Handling
@@ -70,5 +70,8 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 | Deployment for every change     | CMDT-based handler registration   |
 | Asynchronous decoupling needed  | Platform Event integration        |
 
+---
+
+## 🧭 Framework Comparison Table
 
 ![Trigger Framework Coparison](framework-comparison.png)
