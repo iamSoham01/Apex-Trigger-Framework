@@ -1,0 +1,16 @@
+Unit of Work (UOW) Pattern-Based Framework
+
+📌 Overview
+Applies a UOW object to register logic handlers (services) and defer execution of logic and DML until all processing is done.
+
+✅ Advantages
+
+1. Excellent control over DML and side-effects
+2. Useful in highly interconnected logic (e.g., multi-object orchestration)
+3. Ensures consistent transaction handling
+
+❌ Disadvantages
+
+1. Complex to understand and implement
+2. Overhead not needed for simple use cases
+3. Can introduce rigidity if misused

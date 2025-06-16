@@ -1,0 +1,17 @@
+Config-Driven (Custom Metadata) Framework
+
+📌 Overview
+Trigger execution and handler mapping is driven by Custom Metadata Types (CMDT). Enables logic execution based on org-configurable data rather than hardcoded mappings.
+
+✅ Advantages
+
+1. Highly flexible and declarative
+2. Great for ISVs or managed packages
+3. New handlers can be added without code changes
+4. Promotes clean separation between platform logic and configuration
+
+❌ Disadvantages
+
+1. Slightly complex to build and debug
+2. Requires careful versioning and metadata management
+3. Runtime errors possible if configuration is incomplete

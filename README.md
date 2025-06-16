@@ -16,6 +16,17 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 
 ---
 
+## 📦 Features
+
+- ✅ **CMDT-Driven Trigger Handler Registration** – no-code handler wiring
+- 🔁 **Recursion Guard** – prevent re-entry and infinite loops
+- 🧱 **Unit of Work (UOW)** – bulk-safe DML coordination
+- 🧠 **Trigger Context Abstraction** – simplified logic with full context
+- 🔄 **Event Filtering & Execution Order** – handler sequencing per event
+- 🔔 **Platform Event Support (Optional)** – fully decoupled, async processing
+
+---
+
 ## 🚀 Getting Started
 
 1. **Deploy Metadata**  
@@ -43,17 +54,6 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 - Use `Test.startTest()` and `Test.stopTest()` for platform event listener coverage
 - Validate recursion guard logic in trigger test cases
 - Assert UOW commits in expected order
-
----
-
-## 📦 Features
-
-- ✅ **CMDT-Driven Trigger Handler Registration** – no-code handler wiring
-- 🔁 **Recursion Guard** – prevent re-entry and infinite loops
-- 🧱 **Unit of Work (UOW)** – bulk-safe DML coordination
-- 🧠 **Trigger Context Abstraction** – simplified logic with full context
-- 🔄 **Event Filtering & Execution Order** – handler sequencing per event
-- 🔔 **Platform Event Support (Optional)** – fully decoupled, async processing
 
 ---
 

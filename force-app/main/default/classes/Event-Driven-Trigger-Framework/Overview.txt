@@ -1,0 +1,17 @@
+Event-Driven / Platform Event Based Framework
+
+📌 Overview
+Trigger logic is decoupled by publishing Platform Events or Change Data Capture events, and logic is handled asynchronously in subscribers.
+
+✅ Advantages
+
+1. Great for loosely coupled, async workflows
+2. Scales better across systems (esp. integrations)
+3. Improves UI responsiveness
+
+❌ Disadvantages
+
+1. Higher latency (due to async nature)
+2. Not suitable for synchronous data validation
+3. Error handling requires more design
+

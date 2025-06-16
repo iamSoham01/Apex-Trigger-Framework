@@ -1,0 +1,16 @@
+Switch-Based Dispatcher Framework
+
+📌 Overview
+Introduces a dispatcher or controller that determines the trigger context (like before insert, after update) and calls domain-specific logic. Typically involves an event switch or enum.
+
+✅ Advantages
+
+1. Centralized control over trigger context
+2. Cleaner separation of trigger phases and business logic
+3. Easier to manage logic evolution
+
+❌ Disadvantages
+
+1. Requires manual mapping of events
+2. Becomes bulky if not modularized
+3. No native support for configuration-driven execution

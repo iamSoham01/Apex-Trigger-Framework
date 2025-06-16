@@ -1,0 +1,16 @@
+Basic Handler-Based Framework
+
+📌 Overview
+A simple structure where the trigger delegates logic to a corresponding handler class. The logic is split per trigger event (before insert, after update, etc.).
+
+✅ Advantages
+1. Easy to implement and understand
+2. Centralizes logic away from the trigger file
+3. Keeps trigger code clean
+
+❌ Disadvantages
+
+1. Does not scale well in large orgs
+2. Difficult to manage cross-object logic
+3. Recursion handling and extensibility are limited
+4. No abstraction for reusable logic (e.g., for multiple SObjects)

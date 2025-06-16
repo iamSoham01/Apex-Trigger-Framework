@@ -1,0 +1,16 @@
+Open-Source / Hybrid Frameworks (e.g., fflib, Nebula)
+
+📌 Overview
+Prebuilt frameworks combining the best of domain, UOW, and DI (Dependency Injection) patterns. Often adopted from popular libraries like fflib-apex-common.
+
+✅ Advantages
+
+1. Battle-tested and scalable
+2. Follows enterprise-grade software design principles
+3. Clean separation of concerns
+
+❌ Disadvantages
+
+1. Learning curve for new devs
+2. May feel heavy for smaller orgs
+3. Requires strict adherence to conventions

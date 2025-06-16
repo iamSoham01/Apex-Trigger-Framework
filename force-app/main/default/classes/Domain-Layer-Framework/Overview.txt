@@ -1,0 +1,16 @@
+Domain Layer Framework
+
+📌 Overview
+Each SObject has its own domain class that encapsulates business rules and data manipulations, invoked by a dispatcher.
+
+✅ Advantages
+
+1. Enforces Single Responsibility Principle
+2. Promotes unit testing and domain-driven design
+3. High cohesion, easier maintainability
+
+❌ Disadvantages
+
+1. Boilerplate code increases with number of objects
+2. Still manual if not enhanced with metadata/configuration
+3. Can lead to tight coupling if not carefully designed
