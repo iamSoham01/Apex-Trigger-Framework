@@ -1,17 +1,18 @@
-# ⚡ Salesforce Apex Trigger Framework (Hybrid | CMDT | UOW | Platform Events)
+# ⚡ Salesforce Apex Trigger Framework
 
 A modern, extensible, and production-ready Apex Trigger Framework for Salesforce projects. This framework blends best practices from open-source patterns (like fflib), configuration-driven flexibility, and enterprise-grade features like recursion guards, Unit of Work (UOW), and optional Platform Event-based decoupling.
 
 ---
 
-## 📦 Features
+## 📦 Types of Frameworks
 
-- ✅ **CMDT-Driven Trigger Handler Registration** – no-code handler wiring
-- 🔁 **Recursion Guard** – prevent re-entry and infinite loops
-- 🧱 **Unit of Work (UOW)** – bulk-safe DML coordination
-- 🧠 **Trigger Context Abstraction** – simplified logic with full context
-- 🔄 **Event Filtering & Execution Order** – handler sequencing per event
-- 🔔 **Platform Event Support (Optional)** – fully decoupled, async processing
+- ✅ [**Basic Handler-Based Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Basic-Handler-Based-Framework)
+- 🔁 [**Switch-Based Dispatcher Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Switch-Based-Dispatcher-Framework)
+- 🧱 [**Domain Layer Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Domain-Layer-Framework)
+- 🧠 [**Config-Driven (Custom Metadata) Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Config-Driven-(Custom-Metadata)-Framework)
+- 🔄 [**Unit of Work (UOW) Pattern-Based Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/UnitOfWork-Framework)
+- 🔔 [**Hybrid Frameworks**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Hybrid-Apex-Trigger-Framework)
+- ⚽ [**Event-Driven / Platform Event Based Framework**](https://github.com/iamSoham01/Apex-Trigger-Framework/tree/main/force-app/main/default/classes/Event-Driven-Trigger-Framework)
 
 ---
 
@@ -45,16 +46,14 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 
 ---
 
-## 💡 Advantages
+## 📦 Features
 
-- Centralized Logic Management
-- Recursion Handling
-- Bulk-Safe DML with Unit of Work
-- Event Filtering and Granular Control
-- Execution Order Control
-- Configuration-Driven Logic (Metadata UI Switch)
-- Supports Platform Event Decoupling
-- Testability and Reusability
+- ✅ **CMDT-Driven Trigger Handler Registration** – no-code handler wiring
+- 🔁 **Recursion Guard** – prevent re-entry and infinite loops
+- 🧱 **Unit of Work (UOW)** – bulk-safe DML coordination
+- 🧠 **Trigger Context Abstraction** – simplified logic with full context
+- 🔄 **Event Filtering & Execution Order** – handler sequencing per event
+- 🔔 **Platform Event Support (Optional)** – fully decoupled, async processing
 
 ---
 
@@ -69,6 +68,7 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 | Trigger logic hard to test      | Modular, testable handler classes |
 | Deployment for every change     | CMDT-based handler registration   |
 | Asynchronous decoupling needed  | Platform Event integration        |
+
 
 ---
 
