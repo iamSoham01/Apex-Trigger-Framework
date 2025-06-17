@@ -1,4 +1,4 @@
-Open-Source / Hybrid Frameworks (e.g., fflib, Nebula)
+Hybrid Frameworks
 
 📌 Overview
 Prebuilt frameworks combining the best of domain, UOW, and DI (Dependency Injection) patterns. Often adopted from popular libraries like fflib-apex-common.
@@ -14,3 +14,16 @@ Prebuilt frameworks combining the best of domain, UOW, and DI (Dependency Inject
 1. Learning curve for new devs
 2. May feel heavy for smaller orgs
 3. Requires strict adherence to conventions
+
+
+Added features
+==============
+
+- Single Trigger Dispatcher for all SObjects
+- CMDT-driven enable/disable per object
+- Recursion guard with max depth
+- Execution order control
+- Handler invocable flag
+- Dispatch control flag
+- Bypass flag support
+- Bulk-safe, testable, and scalable

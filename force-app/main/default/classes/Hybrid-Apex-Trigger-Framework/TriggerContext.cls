@@ -1,18 +1,21 @@
 public class TriggerContext {
 
-    public Boolean isBefore, isAfter, isInsert, isUpdate, isDelete;
-    public List<SObject> newList, oldList;
-    public Map<Id, SObject> newMap, oldMap;
-    public IUnitOfWork uow = new SimpleUnitOfWork();
+    private static Map<String, Object> state = new Map<String, Object>();
 
-    public String getEventKey() {
-        if (isBefore && isInsert) return 'BEFORE_INSERT';
-        if (isBefore && isUpdate) return 'BEFORE_UPDATE';
-        if (isBefore && isDelete) return 'BEFORE_DELETE';
-        if (isAfter && isInsert)  return 'AFTER_INSERT';
-        if (isAfter && isUpdate)  return 'AFTER_UPDATE';
-        if (isAfter && isDelete)  return 'AFTER_DELETE';
-        return null;
+    public static void put(String key, Object value) {
+        state.put(key, value);
+    }
+
+    public static Object get(String key) {
+        return state.get(key);
+    }
+
+    public static void remove(String key) {
+        state.remove(key);
+    }
+
+    public static void clear() {
+        state.clear();
     }
     
 }

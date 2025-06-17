@@ -1,5 +1,5 @@
 public interface ITriggerHandler {
-
-    void handle(TriggerContext context);
+    
+    void handle(TriggerContextParameters context);
 
 }

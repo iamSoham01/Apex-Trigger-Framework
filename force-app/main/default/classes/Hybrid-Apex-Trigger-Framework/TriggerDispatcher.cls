@@ -1,26 +1,48 @@
 public class TriggerDispatcher {
 
-    public static void execute(String objectName, TriggerContext context) {
-        String eventKey = context.getEventKey();
+    private static Map<String, Integer> recursionDepthMap = new Map<String, Integer>();
+    private static final Integer MAX_DEPTH = 3;
+    private static final String BYPASS_KEY = 'TRIGGER_BYPASS';
 
-        List<Trigger_Handler_Config__mdt> handlers = [
-            SELECT Handler_Class__c, Execution_Order__c
-            FROM Trigger_Handler_Config__mdt
-            WHERE Object_Name__c = :objectName
-              AND Trigger_Event__c = :eventKey
-              AND Active__c = true
-            ORDER BY Execution_Order__c ASC
-        ];
+    public static void dispatch(String objectName, TriggerOperation context, List<SObject> newList, Map<Id, SObject> oldMap) {
+        if (shouldBypass(objectName)) return;
 
-        for (Trigger_Handler_Config__mdt config : handlers) {
-            Type handlerType = Type.forName(config.Handler_Class__c);
-            if (handlerType == null) continue;
+        Integer depth = recursionDepthMap.getOrDefault(objectName, 0);
+        if (depth >= MAX_DEPTH) return;
+        recursionDepthMap.put(objectName, depth + 1);
 
-            ITriggerHandler handler = (ITriggerHandler) handlerType.newInstance();
-            handler.handle(context);
+        List<Trigger_Handler_Config__mdt> configs = TriggerConfigCache.getHandlers(objectName, context);
+
+        for (Trigger_Handler_Config__mdt config : configs) {
+            if (!config.Active__c || !config.Dispatch_Enabled__c) continue;
+
+            ITriggerHandler handler = (ITriggerHandler) Type.forName(config.Handler_Class__c).newInstance();
+            handler.handle(new TriggerContextParameters(objectName, context, newList, oldMap));
         }
 
-        context.uow.commitWork(); // Commit all at once
+        recursionDepthMap.put(objectName, depth);
     }
-    
+
+    public static void clearBypass() {
+
+        TriggerContext.remove(BYPASS_KEY);
+
+    }
+
+    public static void bypass(String objectName) {
+
+        Set<String> keys = (Set<String>) TriggerContext.get(BYPASS_KEY);
+        if (keys == null) keys = new Set<String>();
+        keys.add(objectName);
+        TriggerContext.put(BYPASS_KEY, keys);
+        
+    }
+
+    private static Boolean shouldBypass(String objectName) {
+
+        Set<String> keys = (Set<String>) TriggerContext.get(BYPASS_KEY);
+        return keys != null && keys.contains(objectName);
+
+    }
+
 }
