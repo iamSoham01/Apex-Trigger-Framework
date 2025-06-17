@@ -29,10 +29,7 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 
 ## 🚀 Getting Started
 
-1. **Deploy Metadata**  
-   Use SFDX or your preferred deployment tool to push all metadata.
-
-2. **Create CMDT Records**  
+1. **Create CMDT Records**  
    Go to `Trigger_Handler_Config__mdt` and define mappings:
    - Object Name: `Account`
    - Event Type: `BEFORE_INSERT`
@@ -40,20 +37,8 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
    - Execution Order: `1`
    - Active: ✅
 
-3. **Implement Handlers**  
+2. **Implement Handlers**  
    Each handler class implements `ITriggerHandler` and defines logic per context.
-
-4. **Use Platform Events (Optional)**  
-   Publish Platform Events in triggers instead of direct logic. Handle events in separate listeners.
-
----
-
-## 🧪 Testing & Best Practices
-
-- Write unit tests per handler and per service class
-- Use `Test.startTest()` and `Test.stopTest()` for platform event listener coverage
-- Validate recursion guard logic in trigger test cases
-- Assert UOW commits in expected order
 
 ---
 
@@ -75,3 +60,10 @@ A modern, extensible, and production-ready Apex Trigger Framework for Salesforce
 ## 🧭 Framework Comparison Table
 
 ![Trigger Framework Coparison](framework-comparison.png)
+
+
+---
+
+## 🧪 Battle Tested Frameworks
+1. [fflib](https://github.com/mattlacey/fflib-apex-common)
+2. [Kevin O'hara](https://github.com/kevinohara80/sfdc-trigger-framework)
